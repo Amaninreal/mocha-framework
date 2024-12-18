@@ -49,13 +49,12 @@ For example:
     BASE_URL=https://www.abc.com/
 
 ### Running Tests
-To run the tests, you can simply execute this command:
-    ```bash
+1. To run the tests, you can simply execute this command:
+For example:
+   ```bash
     npx mocha test/
 
-To run the tests with a specific reporter for better formatting:
-    ```bash
-    npx mocha test/ --reporter spec
-
-
-
+2. To run the tests with a specific reporter for better formatting:
+For example:
+   ```bash
+   npx mocha test/ --reporter spec
