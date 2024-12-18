@@ -43,7 +43,8 @@ Here’s how you can set up Mocha for test automation on your machine.
 
 ### Configuration
 
-If needed, you can create a .env file for storing environment variables (like base URLs or credentials). For example:
+1. If needed, you can create a .env file for storing environment variables (like base URLs or credentials). 
+For example:
     ```bash
     BASE_URL=https://www.abc.com/
 
