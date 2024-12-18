@@ -52,6 +52,5 @@ describe('Login UI Test', function () {
     await page.click('[id="login-button"]');
     const currentUrl = page.url();
     expect(currentUrl).to.include('/inventory.html');
-    // await delay(90000);
   });
 });
