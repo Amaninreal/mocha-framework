@@ -19,6 +19,7 @@ describe('Login UI Test', function () {
     await browser.close();
   });
 
+  // This delay here added for the any requirement related to debug
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   it('Should load the login page', async () => {
@@ -27,17 +28,16 @@ describe('Login UI Test', function () {
   });
 
   it('should display error for invalid credentials', async () => {
-    // Enter invalid credentials
-    await page.type('[id="user-name"]', 'standard_uer'); // Automatically clears the field
+    await page.type('[id="user-name"]', 'standard_uer');
     await page.type('[id="password"]', 'secret_ce');
     await page.click('[id="login-button"]');
     await page.waitForSelector('.error-message-container');
 
-    // Validate the error message
+    // Validating the error message
     const errorMessage = await page.$eval('.error-message-container', el => el.textContent);
     expect(errorMessage).to.include('Epic sadface: Username and password do not match any user in this service');
 
-    // Clear fields using page.evaluate
+    // Clearing input fields 
     await page.evaluate(() => {
         document.querySelector('[id="user-name"]').value = '';
       });
