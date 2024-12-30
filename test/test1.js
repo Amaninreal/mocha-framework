@@ -6,8 +6,7 @@
 // 2. Subtraction
 // 3. Multiplication
 // 4. Division
-
-var assert = require('assert');
+import { assert } from 'chai';
 
 describe('Mathematical Operations - Test Suite', function(){
 
