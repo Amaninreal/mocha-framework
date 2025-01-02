@@ -10,16 +10,20 @@ describe('Login UI Test', function () {
   before(async () => {
     browser = await puppeteer.launch({
       headless: false,
+      args: [
+        '--start-maximized',
+      ],
     });
-    page = await browser.newPage();
+    const pages = await browser.pages();
+    page = pages[0];
+    await page.setViewport({ width: 1280, height: 720 }); 
     await page.goto(loginUrl);
   });
 
   after(async () => {
     await browser.close();
   });
-
-  // This delay here added for the any requirement related to debug
+  // Adding delay
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   it('Should load the login page', async () => {
